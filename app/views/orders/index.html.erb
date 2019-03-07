@@ -1,6 +1,6 @@
 <div class="container p-3">
-  <table class="table table-bordered text-center">
-    <thead>
+  <table class="table table-bordered text-center table-info">
+    <thead class="thead-dark">
       <tr>    
         <th>商品名稱</th>
         <th>庫存量</th>
@@ -21,4 +21,24 @@
       <% end %>
     </tbody>
   </table>
+  <%= form_for @order do |f|%>
+    選購<%= f.collection_check_boxes(:product_ids, Product.all, :id, :name) do |b| %>
+         <%= b.label class:"p-4" do %>
+          <%= b.check_box + b.text%>
+         <% end %>
+       <%end%>
+    <div class="form-group">
+      <%= f.label :name, "姓名"%>
+      <%= f.text_field :name, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, "Email"%>
+      <%= f.text_field :email, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :address, "地址"%>
+      <%= f.text_field :address, class: "form-control"%>
+    </div>
+    <%= f.submit "成立訂單", class:"btn btn-primary"%>
+  <%end%>
 </div>
