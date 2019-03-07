@@ -1,0 +1,17 @@
+<h3>Hi, <%= @order.name %> </h3>
+
+<p><%= @content %></p>
+<h3>Order Info</h3>
+	<ul>
+	  <% @order.products.each do |product| %>
+	    <li><%= product.name %></li>
+	  <% end %>
+	</ul>
+	<hr>
+	<p>Name: <%= @order.name %></p>
+	<p>Email: <%= @order.email %></p>
+	<p>Address: <%= @order.address %></p>
+<p>
+  Best, <br>
+  from Studio M
+</p>
