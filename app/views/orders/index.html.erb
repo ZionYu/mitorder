@@ -1,0 +1,24 @@
+<div class="container p-3">
+  <table class="table table-bordered text-center">
+    <thead>
+      <tr>    
+        <th>商品名稱</th>
+        <th>庫存量</th>
+      </tr>
+    </thead>  
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td>
+            <% if product.stock == 0 %>
+              <%= "sold out" %>
+            <% else %>
+              <%= product.stock %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
