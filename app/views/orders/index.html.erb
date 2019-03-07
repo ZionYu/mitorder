@@ -21,7 +21,7 @@
       <% end %>
     </tbody>
   </table>
-  <%= form_for @order do |f|%>
+  <%= form_for @order ,url: orders_url do |f|%>
     選購<%= f.collection_check_boxes(:product_ids, Product.all, :id, :name) do |b| %>
          <%= b.label class:"p-4" do %>
           <%= b.check_box + b.text%>
