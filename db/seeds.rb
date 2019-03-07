@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+  Product.destroy_all
+    
+    product_list = [
+      { name: "Macbook"},
+      { name: "iPad"},
+      { name: "iWatch"},
+      { name: "iPhone"}
+    ]
+
+  product_list.each do |product|
+    Product.create( name: product[:name], stock: rand(0..15) )
+  end
