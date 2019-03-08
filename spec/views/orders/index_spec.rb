@@ -1,4 +1,5 @@
-require 'rails_helper'
+require 'rails_helper' 
+
 
 RSpec.describe "orders/index.html.erb", type: :view do
 
@@ -10,7 +11,7 @@ RSpec.describe "orders/index.html.erb", type: :view do
       expect(rendered).to include("商品名稱")
       expect(rendered).to include("Macbook") 
     end
-    
+
     it 'can show "sold out" when stock was zero' do
       @product = Product.create(stock: 0)
       @products = Array.new(2, @product)
@@ -18,6 +19,5 @@ RSpec.describe "orders/index.html.erb", type: :view do
       render
       expect(rendered).to include("庫存量")
       expect(rendered).to include("sold out")   
-    end
-    
+    end 
 end
